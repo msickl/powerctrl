@@ -2,6 +2,8 @@
 
 import os
 import base64
+import time
+import sys
 
 from lib import config as cfg
 from lib import nvrdp as nvr
@@ -52,7 +54,7 @@ def main():
     if status_changed == 0:
         print("Status has changed to online")
         # Start NVR Monitor
-        nvrdp.start(
+        nvr.start(
             cfg.nvrdisplay('PhysicalAddress'), 
             cfg.nvrdisplay('WOLPort')
         )
@@ -64,7 +66,7 @@ def main():
         )
     elif status_changed == 1:
         # Stop NVR Monitor
-        nvrdp.shutdown(
+        nvr.shutdown(
             cfg.nvrdisplay('Address'), 
             cfg.nvrdisplay('ComPort')
         )
