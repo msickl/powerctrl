@@ -11,6 +11,7 @@ data = {
 envpath = '/tmp/portstatus.json'
 
 def current_port_status(server, port):
+    global data, envpath
 
     if os.path.exists(envpath):
         with open(envpath, 'r') as file:
@@ -26,6 +27,7 @@ def current_port_status(server, port):
     return data['current']
 
 def previous_port_status():           
+    global data, envpath
     
     if os.path.exists(envpath):
         with open(envpath, 'r') as file:
