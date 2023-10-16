@@ -12,11 +12,8 @@
   <li>
     First create an ssh-keygen for the unifi switch
   </li>
-    ```
-ssh-keygen -t rsa -b 4096 -C "office@sickl.at"
-ssh-copy-id admin@10.0.0.250
-```
-  <li></li>
+    
+  <li>```ssh-keygen -t rsa -b 4096 -C "office@sickl.at" ssh-copy-id admin@10.0.0.250```</li>
 </ol>
 
 1. First create an ssh-keygen for the unifi switch
