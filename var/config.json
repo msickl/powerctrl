@@ -19,6 +19,8 @@
     "Projector": {
         "Address": "",
         "Username": "",
-        "Password": ""
+        "Password": "",
+        "DefaultPosition": 1,
+        "StandbyPosition": 0
     }
 }

@@ -20,7 +20,10 @@ def current_port_status(server, port):
         with open(envpath, 'w') as file:
             json.dump(data, file)
     
-    data['current'] = portstatus(server, port)
+    status = portstatus(server, port)
+    if status != -1:
+        data['current'] = status
+
     with open(envpath, 'w') as file:
         json.dump(data, file)
         

@@ -29,37 +29,41 @@ def main():
 
     # everytime when script is called
     if current_status == 1:
+        print("PORT: Port is online.")
         # Start Projector
         pjstat = pj.status(pjsrv, pjh)
         if pjstat == 1:
-            print("Port is online. Projector is online. Nothing todo.")
+            print("PROJECTOR: Projector is online. Nothing todo.")
         else:
-            print("Port is online. Projector is offline. Initiate power on.")
+            print("PROJECTOR: Projector is offline. Initiate power on.")
             pj.poweron(pjsrv, pjh)
             time.sleep(2)
             pj.sethdmi2(pjsrv, pjh)
 
     elif current_status == 0:
+        print("PORT: Port is offline.")
         # Stop Projector
         pjstat = pj.status(pjsrv, pjh)
         if pjstat == 1:
-            print("Port is offline. Projector is online. Switch off projector.")
+            print("PROJECTOR: Projector is online. Switch off projector.")
             pj.poweroff(pjsrv, pjh)
         else:
-            print("Port is offline. Projector is offline. Nothing todo.")
+            print("PROJECTOR: Projector is offline. Nothing todo.")
     else:
         print("Error can not get current port status from switch")
     
     # only if status has changed
     if status_changed == 0:
-        print("Status has changed to offline")
+        print("PORT: Status has changed to offline")
 
+        print("NVRDISPLAY: Initiate shutdown.")
         # Stop NVR Monitor
         nvr.shutdown(
             cfg.nvrdisplay('Address'), 
             cfg.nvrdisplay('ComPort')
         )
         
+        print("PTZCAMERA: Set position to offline")
         # Status changed to off state
         ptz.setposition(
             cfg.ptzcamera('Address'),
@@ -67,19 +71,22 @@ def main():
         )
 
     elif status_changed == 1:
-        print("Status has changed to online")
+        print("PORT: Status has changed to online")
+
+        print("NVRDISPLAY: Initiate startup. Send wake on lan.")
         # Start NVR Monitor
         nvr.start(
             cfg.nvrdisplay('PhysicalAddress'), 
             cfg.nvrdisplay('WOLPort')
         )
         
+        print("NVRDISPLAY: Set position to 1")
         # Status changed to on state
         ptz.setposition(
             cfg.ptzcamera('Address'),
             1
         )
-        
+
     else:
         print("Status has not been changed")
         
