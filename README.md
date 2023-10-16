@@ -1,5 +1,5 @@
 # powerctrl
-Used hardware for thissolution<br>
+<p>Used hardware for thissolution</p>
 1x USW-24-PoE<br>
 1x UCK G2 Plus<br>
 1x Panasonic PT-VW530 (Projector)<br>
