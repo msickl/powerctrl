@@ -8,14 +8,20 @@
   <li>1x Value-HD V60CL-N (PTZ Camera)</li>
 </ul>
 
-
-
-1. First create an ssh-keygen for the unifi switch
-
-```
+<ol>
+  <li>
+    First create an ssh-keygen for the unifi switch
+  ```
 ssh-keygen -t rsa -b 4096 -C "office@sickl.at"
 ssh-copy-id admin@10.0.0.250
 ```
+  </li>
+  <li></li>
+</ol>
+
+1. First create an ssh-keygen for the unifi switch
+
+
 
 2. Install the service on the unifi cloud key
 
