@@ -1,10 +1,10 @@
 # powerctrl
-Used hardware for thissolution
-1x USW-24-PoE
-1x UCK G2 Plus
-1x Panasonic PT-VW530 (Projector)
-1x Dell OptiPlex 3050 Micro (NVR Display)
-1x Value-HD V60CL-N (PTZ Camera)
+Used hardware for thissolution<br>
+1x USW-24-PoE<br>
+1x UCK G2 Plus<br>
+1x Panasonic PT-VW530 (Projector)<br>
+1x Dell OptiPlex 3050 Micro (NVR Display)<br>
+1x Value-HD V60CL-N (PTZ Camera)<br>
 
 
 1. First create an ssh-keygen for the unifi switch
