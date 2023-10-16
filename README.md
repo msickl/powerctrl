@@ -12,7 +12,10 @@
   <li>
     First create an ssh-keygen for the unifi switch
 
-    ```ssh-keygen -t rsa -b 4096 -C "office@sickl.at" ssh-copy-id admin@10.0.0.250```
+    ```
+    ssh-keygen -t rsa -b 4096 -C "office@sickl.at" 
+    ssh-copy-id admin@10.0.0.250
+    ```
     
   </li>
     
