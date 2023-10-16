@@ -6,7 +6,7 @@ import time
 import sys
 
 from lib import config as cfg
-from lib import nvrdp as nvr
+from lib import nvrdisplay as nvr
 from lib import switch as sw
 from lib import projector as pj
 from lib import ptzcameras as ptz
