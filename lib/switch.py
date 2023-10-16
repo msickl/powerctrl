@@ -21,6 +21,9 @@ def current_port_status(server, port):
             json.dump(data, file)
     
     data['current'] = portstatus(server, port)
+
+    print(data['current'])
+
     with open(envpath, 'w') as file:
         json.dump(data, file)
         
@@ -47,8 +50,6 @@ def portstatus(server, port):
     try:
         cmd = f"ssh admin@{server} \"swctrl port show id {port}"
         cmd += " | awk '{print \$2}' | sed -e 3d -e '\$!d'\""
-
-        print(cmd)
 
         result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=4)
         if result.returncode == 0:
