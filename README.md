@@ -29,7 +29,7 @@
     
   </li>
   <li>
-    Install the service on the unifi cloud key
+    Install the service on the UCK G2 Plus
 
     ln -s /opt/powerctrl/etc/powerctrl.service /etc/systemd/system/
     systemctrl enable powerctrl.service
