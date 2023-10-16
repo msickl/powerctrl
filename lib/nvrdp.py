@@ -2,7 +2,7 @@
 
 import json
 import subprocess
-import wol
+from . import wol
 
 def shutdown(server, port):
     url = f"http://{server}:{port}"
