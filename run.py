@@ -52,11 +52,12 @@ def main():
     
     # only if status has changed
     if status_changed == 0:
-        print("Status has changed to online")
-        # Start NVR Monitor
-        nvr.start(
-            cfg.nvrdisplay('PhysicalAddress'), 
-            cfg.nvrdisplay('WOLPort')
+        print("Status has changed to offline")
+
+        # Stop NVR Monitor
+        nvr.shutdown(
+            cfg.nvrdisplay('Address'), 
+            cfg.nvrdisplay('ComPort')
         )
         
         # Status changed to off state
@@ -64,11 +65,13 @@ def main():
             cfg.ptzcamera('Address'),
             0
         )
+
     elif status_changed == 1:
-        # Stop NVR Monitor
-        nvr.shutdown(
-            cfg.nvrdisplay('Address'), 
-            cfg.nvrdisplay('ComPort')
+        print("Status has changed to online")
+        # Start NVR Monitor
+        nvr.start(
+            cfg.nvrdisplay('PhysicalAddress'), 
+            cfg.nvrdisplay('WOLPort')
         )
         
         # Status changed to on state
@@ -76,6 +79,7 @@ def main():
             cfg.ptzcamera('Address'),
             1
         )
+        
     else:
         print("Status has not been changed")
         
