@@ -1,7 +1,5 @@
 # powerctrl
 
-To install the Service link the powerctrl.service to the systemd services and enable the service 
-
 1. First create an ssh-keygen for the unifi switch
 
 ```
