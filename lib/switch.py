@@ -48,6 +48,8 @@ def portstatus(server, port):
         cmd = f"ssh admin@{server} \"swctrl port show id {port}"
         cmd += " | awk '{print \$2}' | sed -e 3d -e '\$!d'\""
 
+        print(cmd)
+
         result = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=4)
         if result.returncode == 0:
             status = result.stdout.strip()
