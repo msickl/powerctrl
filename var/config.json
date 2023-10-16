@@ -1,25 +1,25 @@
 {
     "Switch": {
-        "Address": "",
-        "Username": "",
-        "Password": "",
+        "Address": "10.0.0.250",
+        "Username": "admin",
+        "Password": "*",
         "PortToMonitor": 1
     },
     "NVRDisplay": {
-		"Address": "",
-        "PhysicalAddress": "",
+	"Address": "10.0.0.191",
+        "PhysicalAddress": "*",
         "WOLPort": 9,
         "ComPort": 9000
     },
     "PTZCamera": {
-        "Address": "",
-        "Username": "",
-        "Password": ""
+        "Address": "10.0.0.80",
+        "Username": "admin",
+        "Password": "*"
     },
     "Projector": {
-        "Address": "",
-        "Username": "",
-        "Password": "",
+        "Address": "10.0.0.98",
+        "Username": "admin",
+        "Password": "*",
         "DefaultPosition": 1,
         "StandbyPosition": 0
     }
