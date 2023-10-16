@@ -26,9 +26,9 @@ def current_port_status(server, port):
         
     return data['current']
 
-def previous_port_status():           
+def port_status_changed():           
     global data, envpath
-    
+
     if os.path.exists(envpath):
         with open(envpath, 'r') as file:
             data = json.load(file)
