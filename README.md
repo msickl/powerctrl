@@ -1,11 +1,11 @@
 # powerctrl
 <p>Used hardware for thissolution</p>
 <ul>
-  <li>1x USW-24-PoE</li>
-  <li>1x UCK G2 Plus</li>
-  <li>1x Panasonic PT-VW530 (Projector)</li>
-  <li>1x Dell OptiPlex 3050 Micro (NVR Display)</li>
-  <li>1x Value-HD V60CL-N (PTZ Camera)</li>
+  <li>USW-24-PoE</li>
+  <li>UCK G2 Plus</li>
+  <li>Panasonic PT-VW530 (Projector)</li>
+  <li>Dell OptiPlex 3050 Micro (NVR Display)</li>
+  <li>Value-HD V60CL-N (PTZ Camera)</li>
 </ul>
 
 <ol>
