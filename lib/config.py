@@ -12,13 +12,13 @@ def get(s):
     return cfg[s]
     
 def switch(s):
-    return cfg['Switch']
+    return cfg['Switch'][s]
     
 def nvrdisplay(s):
-    return cfg['NVRDisplay']
+    return cfg['NVRDisplay'][s]
     
 def ptzcamera(s):
-    return cfg['PTZCamera']
+    return cfg['PTZCamera'][s]
 
 def projector(s):
-    return cfg['Projector']
+    return cfg['Projector'][s]
