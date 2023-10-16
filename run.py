@@ -50,7 +50,7 @@ def main():
         else:
             print("PROJECTOR: Projector is offline. Nothing todo.")
     else:
-        print("Error can not get current port status from switch")
+        print("PORT: Error can not get current port status from switch")
     
     # only if status has changed
     if status_changed == 0:
@@ -88,7 +88,7 @@ def main():
         )
 
     else:
-        print("Status has not been changed")
+        print("PORT: Status has not been changed")
         
     sys.exit(1)
     
