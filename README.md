@@ -10,7 +10,19 @@
 
 <ol>
   <li>
-    First create an ssh-keygen for the unifi switch
+    install git on the UCK G2 Plus
+    
+    apt-get install git
+
+  </li>
+  <li>
+    clone the repo into /opt
+    
+    git clone 
+    
+  </li>
+  <li>
+    create an ssh-keygen for the unifi switch
 
     ssh-keygen -t rsa -b 4096 -C "office@sickl.at" 
     ssh-copy-id admin@10.0.0.250
