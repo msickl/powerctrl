@@ -32,7 +32,6 @@ def main():
         print("PORT: Port is online.")
         # Start Projector
         pjstat = pj.status(pjsrv, pjh)
-        print(pjstat)
         if pjstat == 1:
             print("PROJECTOR: Projector is online. Nothing todo.")
         else:
