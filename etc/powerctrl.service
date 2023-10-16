@@ -1,0 +1,13 @@
+[Unit]
+Description=Device Power Control Service
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectroy=/opt/powerctrl/
+ExecStart=/usr/bin/python3 /opt/powerctrl/run.py
+RestartForceExitStatus=1
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,24 @@
+{
+    "Switch": {
+        "Address": "",
+        "Username": "",
+        "Password": "",
+        "PortToMonitor": 1
+    },
+    "NVRDisplay": {
+		"Address": "",
+        "PhysicalAddress": "",
+        "WOLPort": 9,
+        "ComPort": 9000
+    },
+    "PTZCamera": {
+        "Address": "",
+        "Username": "",
+        "Password": ""
+    },
+    "Projector": {
+        "Address": "",
+        "Username": "",
+        "Password": ""
+    }
+}
