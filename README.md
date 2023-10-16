@@ -1,5 +1,5 @@
 # powerctrl
-<p>Used hardware for thissolution</p>
+<p>Used hardware for this solution</p>
 <ul>
   <li>USW-24-PoE</li>
   <li>UCK G2 Plus</li>
