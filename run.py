@@ -71,20 +71,20 @@ def main():
     
     # only if status has changed
     if status_changed == 0:
-        print("PORT: Status has changed to offline")
-
-        print("PTZCAMERA: Set position to offline")
         # Status changed to off state
+        print("PORT: Status has changed to offline")
+        
+        print("PTZCAMERA: Set position to offline")
         ptz.setposition(
             cfg.ptzcamera('Address'),
             0
         )
 
     elif status_changed == 1:
+        # Status changed to on state
         print("PORT: Status has changed to online")
 
         print("NVRDISPLAY: Set position to 1")
-        # Status changed to on state
         ptz.setposition(
             cfg.ptzcamera('Address'),
             1
