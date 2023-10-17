@@ -12,7 +12,7 @@
   <li>
     install git on the UCK G2 Plus
     
-    apt-get install git
+    apt install git
 
   </li>
   <li>
