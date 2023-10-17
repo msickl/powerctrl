@@ -17,7 +17,8 @@
   </li>
   <li>
     clone the repo into /opt
-    
+
+    cd /opt
     git clone https://github.com/msickl/powerctrl.git
     
   </li>
