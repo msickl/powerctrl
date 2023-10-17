@@ -23,7 +23,7 @@
     
   </li>
   <li>
-    install the script
+    install the service
 
     python3 /opt/powerctrl/install.py
     
