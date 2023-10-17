@@ -30,6 +30,14 @@ def main():
     # everytime when script is called
     if current_status == 1:
         print("PORT: Port is online.")
+
+        # Start NVR Monitor
+        print("NVRDISPLAY: Initiate startup. Send wake on lan.")
+        nvr.start(
+            cfg.nvrdisplay('PhysicalAddress'), 
+            cfg.nvrdisplay('WOLPort')
+        )
+        
         # Start Projector
         pjstat = pj.status(pjsrv, pjh)
         if pjstat == 1:
@@ -42,6 +50,15 @@ def main():
 
     elif current_status == 0:
         print("PORT: Port is offline.")
+        
+        # Stop NVR Monitor
+        print("NVRDISPLAY: Initiate shutdown.")
+        
+        nvr.shutdown(
+            cfg.nvrdisplay('Address'), 
+            cfg.nvrdisplay('ComPort')
+        )
+        
         # Stop Projector
         pjstat = pj.status(pjsrv, pjh)
         if pjstat == 1:
@@ -56,13 +73,6 @@ def main():
     if status_changed == 0:
         print("PORT: Status has changed to offline")
 
-        print("NVRDISPLAY: Initiate shutdown.")
-        # Stop NVR Monitor
-        nvr.shutdown(
-            cfg.nvrdisplay('Address'), 
-            cfg.nvrdisplay('ComPort')
-        )
-        
         print("PTZCAMERA: Set position to offline")
         # Status changed to off state
         ptz.setposition(
@@ -73,13 +83,6 @@ def main():
     elif status_changed == 1:
         print("PORT: Status has changed to online")
 
-        print("NVRDISPLAY: Initiate startup. Send wake on lan.")
-        # Start NVR Monitor
-        nvr.start(
-            cfg.nvrdisplay('PhysicalAddress'), 
-            cfg.nvrdisplay('WOLPort')
-        )
-        
         print("NVRDISPLAY: Set position to 1")
         # Status changed to on state
         ptz.setposition(
