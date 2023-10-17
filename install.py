@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import subprocess
 from lib import config as cfg
 
