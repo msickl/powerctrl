@@ -23,19 +23,9 @@
     
   </li>
   <li>
-    create an ssh-keygen for the unifi switch
+    install the script
 
-    ssh-keygen -t rsa -b 4096 -C "office@sickl.at" 
-    ssh-copy-id admin@10.0.0.250
-    
-  </li>
-  <li>
-    Install the service on the UCK G2 Plus
-
-    ln -s /opt/powerctrl/etc/powerctrl.service /etc/systemd/system/
-    systemctrl enable powerctrl.service
-    systemctrl daemon-reload
-    systemctrl start powerctrl.service
+    python3 /opt/powerctrl/install.py
     
   </li>
 </ol>
