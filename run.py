@@ -77,17 +77,17 @@ def main():
         print("PTZCAMERA: Set position to offline")
         ptz.setposition(
             cfg.ptzcamera('Address'),
-            0
+            cfg.ptzcamera('StandbyPosition')
         )
 
     elif status_changed == 1:
         # Status changed to on state
         print("PORT: Status has changed to online")
 
-        print("NVRDISPLAY: Set position to 1")
+        print("NVRDISPLAY: Set position")
         ptz.setposition(
             cfg.ptzcamera('Address'),
-            1
+            cfg.ptzcamera('DefaultPosition')
         )
 
     else:
