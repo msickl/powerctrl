@@ -14,13 +14,13 @@
     "PTZCamera": {
         "Address": "10.0.0.80",
         "Username": "admin",
-        "Password": "*"
+        "Password": "*",
+        "DefaultPosition": 1,
+        "StandbyPosition": 0
     },
     "Projector": {
         "Address": "10.0.0.98",
         "Username": "admin",
-        "Password": "*",
-        "DefaultPosition": 1,
-        "StandbyPosition": 0
+        "Password": "*"
     }
 }
