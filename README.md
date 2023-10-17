@@ -1,8 +1,8 @@
 # powerctrl
 <p>Used hardware for this solution</p>
 <ul>
-  <li>USW-24-PoE</li>
-  <li>UCK G2 Plus</li>
+  <li>UCK G2 Plus (powerctrl service)</li>
+  <li>USW-24-PoE (Switch)</li>
   <li>Panasonic PT-VW530 (Projector)</li>
   <li>Dell OptiPlex 3050 Micro (NVR Display)</li>
   <li>Value-HD V60CL-N (PTZ Camera)</li>
