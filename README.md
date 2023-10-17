@@ -18,7 +18,7 @@
   <li>
     clone the repo into /opt
     
-    git clone repository 
+    git clone [repository]
     
   </li>
   <li>
