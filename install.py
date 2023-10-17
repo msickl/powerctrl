@@ -1,11 +1,12 @@
 import subprocess
-from lib import config
+from lib import config as cfg
 
 # Generate an SSH key pair
 subprocess.run('ssh-keygen -t rsa -b 4096 -C "office@sickl.at"', shell=True)
 
 # Copy the SSH public key to the remote server
-subprocess.run('ssh-copy-id admin@10.0.0.250', shell=True)
+cmd = f"ssh-copy-id admin@{cfg.switch('Address')}"
+subprocess.run(cmd, shell=True)
 
 # Create a symbolic link and configure the systemd service
 subprocess.run('ln -s /opt/powerctrl/etc/powerctrl.service /etc/systemd/system/', shell=True)
