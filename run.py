@@ -92,7 +92,9 @@ def main():
 
     else:
         print("PORT: Status has not been changed")
-        
+
+    # Wait 5 sec before the next restart init.
+    time.sleep(5)    
     sys.exit(1)
     
 if __name__ == "__main__":
