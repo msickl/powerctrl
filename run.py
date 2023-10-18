@@ -93,7 +93,7 @@ def main():
     else:
         print("PORT: Status has not been changed")
 
-    # Wait 5 sec before the next restart init.
+    # Wait for 5 seconds due to port issues before initiating the next restart.
     time.sleep(5)    
     sys.exit(1)
     
