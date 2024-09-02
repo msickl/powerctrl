@@ -2,16 +2,10 @@
 
 import subprocess
 from lib import config as cfg
+from lib import switch as sw
 
-# Generate an SSH key pair
-print("Generate an SSH key pair")
-subprocess.run("ssh-keygen -f /root/.ssh/id_rsa -q -t rsa -b 4096 -N ''", shell=True)
-
-# Copy the SSH public key to the remote server
-print("Copy the SSH public key to the remote server")
-cmd = f"sshpass -p {cfg.switch('Password')} ssh-copy-id -i /root/.ssh/id_rsa -f {cfg.switch('Username')}@{cfg.switch('Address')}"
-
-subprocess.run(cmd, shell=True)
+# Connect to unifi Switch
+sw.connect()
 
 # Create a symbolic link and configure the systemd service
 print("Create a symbolic link and configure the systemd service")
