@@ -68,7 +68,7 @@ def portstatus(server, port):
 
 def connect():
     print("Generate an SSH key pair")
-    subprocess.run("ssh-keygen -f /root/.ssh/id_rsa -q -t rsa -b 4096 -N ''", shell=True)
+    subprocess.run("ssh-keygen -f /root/.ssh/id_rsa -q -t rsa -b 4096 -N '' <<< y", shell=True)
     
     print("Copy the SSH public key to the remote server")
     cmd = f"sshpass -p {cfg.switch('Password')} ssh-copy-id -i /root/.ssh/id_rsa -f {cfg.switch('Username')}@{cfg.switch('Address')}"
