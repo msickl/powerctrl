@@ -2,6 +2,7 @@
 import subprocess
 import json
 import os
+from lib import config as cfg
 
 data = {
     'previous': 0,
@@ -64,6 +65,14 @@ def portstatus(server, port):
         return -1
     except Exception as e:
         return -1
+
+def connect():
+    print("Generate an SSH key pair")
+    subprocess.run("ssh-keygen -f /root/.ssh/id_rsa -q -t rsa -b 4096 -N ''", shell=True)
     
+    print("Copy the SSH public key to the remote server")
+    cmd = f"sshpass -p {cfg.switch('Password')} ssh-copy-id -i /root/.ssh/id_rsa -f {cfg.switch('Username')}@{cfg.switch('Address')}"
+    subprocess.run(cmd, shell=True)
+
 
     
