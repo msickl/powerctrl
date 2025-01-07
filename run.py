@@ -18,6 +18,7 @@ def main():
         cfg.switch('PortToMonitor')
     )
     status_changed = sw.port_status_changed()
+    
     pj = ProjectorController(cfg.projector('Address'), cfg.projector('Username'), cfg.projector('Password'))
     
     # everytime when script is called
@@ -30,16 +31,14 @@ def main():
             cfg.nvrdisplay('PhysicalAddress'), 
             cfg.nvrdisplay('WOLPort')
         )
-        
-        # Start Projector
-        pjstat = pj.status(pjsrv, pjh)
-        if pjstat == 1:
+
+        if pj.status() == 1:
             print("PROJECTOR: Projector is online. Nothing todo.")
         else:
             print("PROJECTOR: Projector is offline. Initiate power on.")
-            pj.poweron(pjsrv, pjh)
+            pj.poweron()
             time.sleep(2)
-            pj.sethdmi2(pjsrv, pjh)
+            pj.sethdmi2()
 
     elif current_status == 0:
         print("PORT: Port is offline.")
@@ -53,10 +52,10 @@ def main():
         )
         
         # Stop Projector
-        pjstat = pj.status(pjsrv, pjh)
+        pjstat = pj.status()
         if pjstat == 1:
             print("PROJECTOR: Projector is online. Switch off projector.")
-            pj.poweroff(pjsrv, pjh)
+            pj.poweroff()
         else:
             print("PROJECTOR: Projector is offline. Nothing todo.")
     else:
