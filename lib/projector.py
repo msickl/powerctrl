@@ -11,10 +11,10 @@ def init(server, username, password):
         "Authorization": f"Basic {pjauthbytes.decode('utf-8')}"
     }
 
-def status(server, headers):
+def status():
 
-    url = f"http://{server}/cgi-bin/projector_status.cgi"
-    res = requests.get(url, headers=headers)
+    url = f"http://{this.server}/cgi-bin/projector_status.cgi"
+    res = requests.get(url, headers=this.headers)
 
     if res.status_code == 200:
 
@@ -35,14 +35,14 @@ def status(server, headers):
     else:
         return -1
 
-def poweron(server, headers):
-    url = f"http://{server}/cgi-bin/power_on.cgi"
-    requests.post(url, headers=headers)
+def poweron():
+    url = f"http://{this.server}/cgi-bin/power_on.cgi"
+    requests.post(url, headers=this.headers)
 
-def poweroff(server, headers):
-    url = f"http://{server}/cgi-bin/power_off.cgi"
-    requests.post(url, headers=headers)
+def poweroff():
+    url = f"http://{this.server}/cgi-bin/power_off.cgi"
+    requests.post(url, headers=this.headers)
 
-def sethdmi2(server, headers):
-    url = f"http://{server}/cgi-bin/proj_ctl.cgi?key=hdmi2&lang=e&x=79&y=12"
-    requests.get(url, headers=headers)
+def sethdmi2():
+    url = f"http://{this.server}/cgi-bin/proj_ctl.cgi?key=hdmi2&lang=e&x=79&y=12"
+    requests.get(url, headers=this.headers)
