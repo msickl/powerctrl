@@ -3,6 +3,10 @@
 import requests
 import re
 
+def init(server, username, password):
+    this.server = server
+    
+
 def status(server, headers):
 
     url = f"http://{server}/cgi-bin/projector_status.cgi"
