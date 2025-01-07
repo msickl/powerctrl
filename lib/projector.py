@@ -5,7 +5,11 @@ import re
 
 def init(server, username, password):
     this.server = server
-    
+    pjauth = f"{username}:{password}"
+    pjauthbytes = base64.b64encode(pjauth.encode('utf-8'))
+    this.headers = {
+        "Authorization": f"Basic {pjauthbytes.decode('utf-8')}"
+    }
 
 def status(server, headers):
 
