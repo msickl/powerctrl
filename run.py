@@ -18,15 +18,8 @@ def main():
         cfg.switch('PortToMonitor')
     )
     status_changed = sw.port_status_changed()
+    pj = ProjectorController(cfg.projector('Address'), cfg.projector('Username'), cfg.projector('Password'))
     
-    # Initialize Projector Parameters
-    pjsrv = cfg.projector('Address')
-    pjauth = f"{cfg.projector('Username')}:{cfg.projector('Password')}"
-    pjauthbytes = base64.b64encode(pjauth.encode('utf-8'))
-    pjh = {
-        "Authorization": f"Basic {pjauthbytes.decode('utf-8')}"
-    }
-
     # everytime when script is called
     if current_status == 1:
         print("PORT: Port is online.")
