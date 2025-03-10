@@ -21,6 +21,7 @@ def main():
     
     pj = ProjectorController(cfg.projector('Address'), cfg.projector('Username'), cfg.projector('Password'))
     nvr = NVRDisplayController(cfg.nvrdisplay('PhysicalAddress'), cfg.nvrdisplay('WOLPort'), cfg.nvrdisplay('Address'), cfg.nvrdisplay('ComPort'))
+    ptz = PTZCameraController(cfg.ptzcamera('Address'))
     
     # everytime when script is called
     if current_status == 1:
@@ -62,23 +63,16 @@ def main():
     if status_changed == 0:
         # Status changed to off state
         print("PORT: Status has changed to offline")
-        
         print("PTZCAMERA: Set position to offline")
-        ptz.setposition(
-            cfg.ptzcamera('Address'),
-            cfg.ptzcamera('StandbyPosition')
-        )
+        
+        ptz.setposition(cfg.ptzcamera('StandbyPosition'))
 
     elif status_changed == 1:
         # Status changed to on state
         print("PORT: Status has changed to online")
-
         print("NVRDISPLAY: Set position")
-        ptz.setposition(
-            cfg.ptzcamera('Address'),
-            cfg.ptzcamera('DefaultPosition')
-        )
-
+        
+        ptz.setposition(cfg.ptzcamera('DefaultPosition'))
     else:
         print("PORT: Status has not been changed")
 
