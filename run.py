@@ -57,7 +57,7 @@ def main():
         pjstat = pj.status()
         if pjstat == 1:
             print("PROJECTOR: Projector is online. Switch off projector.")
-            pj.poweroff()
+            pj.power_off()
         else:
             print("PROJECTOR: Projector is offline. Nothing todo.")
     else:
