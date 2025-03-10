@@ -2,7 +2,7 @@
 
 import requests
 
-class NVRDisplayController:
+class PTZCameraController:
     def __init__(self, server):
         self.server = server
 
