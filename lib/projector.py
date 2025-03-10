@@ -79,6 +79,17 @@ class ProjectorController:
         except requests.exceptions.RequestException as e:
             print(f"Network error: {e}")
 
+    def set_picture_mode_dynamic(self):
+        try:
+            url = f"http://{self.server}/proj_ctl.cgi?key=pic_dynamic&lang=e&x=57&y=15"
+            res = requests.get(url, headers=self.headers, timeout=5)
+            if res.status_code == 200:
+                print("Picture mode command sent successfully.")
+            else:
+                print(f"Failed to send Picture mode command: {res.status_code}")
+        except requests.exceptions.RequestException as e:
+            print(f"Network error: {e}")
+
 # Example usage:
 # projector = ProjectorController("192.168.1.100", "username", "password")
 # print(projector.status())
