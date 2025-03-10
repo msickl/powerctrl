@@ -6,7 +6,7 @@ import time
 import sys
 
 from lib import config as cfg
-from lib import nvrdisplay as nvr
+from lib.nvrdisplay import NVRDisplayController
 from lib import switch as sw
 from lib.projector import ProjectorController
 from lib import ptzcamera as ptz
@@ -20,6 +20,7 @@ def main():
     status_changed = sw.port_status_changed()
     
     pj = ProjectorController(cfg.projector('Address'), cfg.projector('Username'), cfg.projector('Password'))
+    nvr = NVRDisplayController(cfg.nvrdisplay('PhysicalAddress'), cfg.nvrdisplay('WOLPort'), cfg.nvrdisplay('Address'), cfg.nvrdisplay('ComPort'))
     
     # everytime when script is called
     if current_status == 1:
@@ -27,10 +28,7 @@ def main():
 
         # Start NVR Monitor
         print("NVRDISPLAY: Initiate startup. Send wake on lan.")
-        nvr.start(
-            cfg.nvrdisplay('PhysicalAddress'), 
-            cfg.nvrdisplay('WOLPort')
-        )
+        nvr.start()
 
         if pj.status() == 1:
             print("PROJECTOR: Projector is online. Nothing todo.")
@@ -48,10 +46,7 @@ def main():
         # Stop NVR Monitor
         print("NVRDISPLAY: Initiate shutdown.")
         
-        nvr.shutdown(
-            cfg.nvrdisplay('Address'), 
-            cfg.nvrdisplay('ComPort')
-        )
+        nvr.shutdown()
         
         # Stop Projector
         pjstat = pj.status()
