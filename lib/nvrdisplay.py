@@ -13,7 +13,7 @@ class NVRDisplayController:
             "Authorization": f"Basic {pjauthbytes.decode('utf-8')}"
         }
 
-    def shutdown(server, port):
+    def shutdown(self, server, port):
         url = f"http://{server}:{port}"
         headers = {
             "Content-Type": "application/json"
@@ -40,5 +40,5 @@ class NVRDisplayController:
         except subprocess.CalledProcessError as e:
             print(f"Request failed with error: {e.returncode}\n{e.output}")
     
-    def start(server, port):
+    def start(self, server, port):
         wol.send(server, port)
