@@ -5,16 +5,14 @@ import subprocess
 from . import wol
 
 class NVRDisplayController:
-    def __init__(self, server, username, password):
-        self.server = server
-        pjauth = f"{username}:{password}"
-        pjauthbytes = base64.b64encode(pjauth.encode("utf-8"))
-        self.headers = {
-            "Authorization": f"Basic {pjauthbytes.decode('utf-8')}"
-        }
+    def __init__(self, PhysicalAddress, WOLPort, IPAddress, ComPort):
+        self.PhysicalAddress = PhysicalAddress
+        self.WOLPort = WOLPort
+        self.IPAddress = IPAddress
+        self.ComPort = ComPort
 
-    def shutdown(self, server, port):
-        url = f"http://{server}:{port}"
+    def shutdown(self):
+        url = f"http://{self.IPAddress}:{self.ComPort}"
         headers = {
             "Content-Type": "application/json"
         }
@@ -40,5 +38,5 @@ class NVRDisplayController:
         except subprocess.CalledProcessError as e:
             print(f"Request failed with error: {e.returncode}\n{e.output}")
     
-    def start(self, server, port):
-        wol.send(server, port)
+    def start(self):
+        wol.send(self.PhysicalAddress, self.WOLPort)
