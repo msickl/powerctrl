@@ -36,9 +36,10 @@ def main():
             print("PROJECTOR: Projector is online. Nothing todo.")
         else:
             print("PROJECTOR: Projector is offline. Initiate power on.")
-            pj.poweron()
+            pj.power_on()
             time.sleep(2)
-            pj.sethdmi2()
+            pj.set_hdmi2()
+            pj.set_
 
     elif current_status == 0:
         print("PORT: Port is offline.")
