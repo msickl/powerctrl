@@ -11,7 +11,7 @@ data = {
 
 envpath = '/tmp/portstatus.json'
 
-def current_port_status(server, port):
+def current_port_status(self, server, port):
     global data, envpath
 
     if os.path.exists(envpath):
@@ -30,7 +30,7 @@ def current_port_status(server, port):
         
     return data['current']
 
-def port_status_changed():           
+def port_status_changed(self):           
     global data, envpath
 
     if os.path.exists(envpath):
@@ -47,7 +47,7 @@ def port_status_changed():
     else:
         return -1
 
-def portstatus(server, port):
+def portstatus(self, server, port):
     try:
         cmd = f"ssh admin@{server} \"swctrl port show id {port}"
         cmd += " | awk '{print \$2}' | sed -e 3d -e '\$!d'\""
@@ -66,7 +66,7 @@ def portstatus(server, port):
     except Exception as e:
         return -1
 
-def connect():
+def connect(self):
     print("Generate an SSH key pair")
     subprocess.run("ssh-keygen -f /root/.ssh/id_rsa -q -t rsa -b 4096 -N '' <<< y", shell=True)
     
