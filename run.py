@@ -39,7 +39,8 @@ def main():
             pj.power_on()
             time.sleep(2)
             pj.set_hdmi2()
-            pj.set_
+            time.sleep(1)
+            pj.set_picture_mode_dynamic()
 
     elif current_status == 0:
         print("PORT: Port is offline.")
