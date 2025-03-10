@@ -9,7 +9,7 @@ from lib import config as cfg
 from lib.nvrdisplay import NVRDisplayController
 from lib import switch as sw
 from lib.projector import ProjectorController
-from lib import ptzcamera as ptz
+from lib.ptzcamera import PTZCameraController
 
 def main():
     # Initialize Switch Parameters
